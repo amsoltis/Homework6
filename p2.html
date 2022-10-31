@@ -13,17 +13,21 @@
     <div id="container"></div>
     <header class="info">
         <hgroup class="about">
-            <h1>sketch.js &rsaquo; THREE</h1>
-            <h2>Using a THREE.js renderer context with sketch.js</h2>
+            <h1>Homework 6</h1>
+            <h2>MIS-4013</h2>
+            <h3>Andrew Soltis</h3>
         </hgroup>
         <nav class="more">
-            <a href="https://github.com/soulwire/sketch.js/archive/master.zip" target="_blank">Download</a>
-            <a href="https://github.com/soulwire/sketch.js" target="_blank">View on Github</a>
+            <a href="p2.html">Three.JS</a>
+            <a href="p3.html">JS 2</a>
+            <a href="#">JS 3</a>
+            <a href="#">JS 4</a>
         </nav>
     </header>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r58/three.min.js"></script>
     <script src="https://soulwire.github.io/sketch.js/js/sketch.js"></script>
-    <script>var camera, scene, geometry, material, mesh, renderer = new THREE.WebGLRenderer();
+    <script>
+    var camera, scene, geometry, material, mesh, renderer = new THREE.WebGLRenderer();
 
         var demo = Sketch.create({
 
@@ -35,34 +39,34 @@
             // Use existing context
             context: renderer.context,
 
-            setup: function() {
+            setup: function () {
 
-                camera = new THREE.PerspectiveCamera( 75, this.width / this.height, 1, 10000 );
+                camera = new THREE.PerspectiveCamera(75, this.width / this.height, 1, 10000);
                 camera.position.z = 1000;
 
                 scene = new THREE.Scene();
 
-                geometry = new THREE.CubeGeometry( 200, 200, 200 );
-                material = new THREE.MeshBasicMaterial( { color: 0xFFFFFF, wireframe: true } );
+                geometry = new THREE.CubeGeometry(200, 200, 200);
+                material = new THREE.MeshBasicMaterial({ color: 0xFFFFFF, wireframe: true });
 
-                mesh = new THREE.Mesh( geometry, material );
-                scene.add( mesh );
+                mesh = new THREE.Mesh(geometry, material);
+                scene.add(mesh);
             },
 
-            resize: function() {
+            resize: function () {
 
                 camera.aspect = this.width / this.height;
                 camera.updateProjectionMatrix();
 
-                renderer.setSize( this.width, this.height );
+                renderer.setSize(this.width, this.height);
             },
 
-            draw: function() {
+            draw: function () {
 
                 mesh.rotation.x += 0.01;
                 mesh.rotation.y += 0.02;
 
-                renderer.render( scene, camera );
+                renderer.render(scene, camera);
             }
         });</script>
 </body>
